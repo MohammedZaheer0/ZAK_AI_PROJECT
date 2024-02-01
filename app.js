@@ -54,47 +54,53 @@ function takeCommand(message){
     }
     else if(message.includes("open google")){
         window.open("https://www.google.com","_blank");
-        speak("Opening Google")
+        speak("Opening Google");
     }
     else if(message.includes("open linkedin")){
         window.open("https://www.linkedin.com","_blank");
-        speak("Opening LinkedIn")
+        speak("Opening LinkedIn");
     }
     else if(message.includes("open youtube")){
         window.open("https://www.youtube.com","_blank");
-        speak("Opening YouTube")
+        speak("Opening YouTube");
     }
     else if(message.includes("open facebook")){
         window.open("https://www.facebook.com","_blank");
-        speak("Opening Facebook")
+        speak("Opening Facebook");
     }
     else if(message.includes("open instagram")){
         window.open("https://www.instagram.com","_blank");
-        speak("Opening Instagram")
+        speak("Opening Instagram");
     }
     else if(message.includes("what is") || message.includes("who is") || message.includes("where is ")){
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`,"_blank");
         let finalText = "This is What i found on internet regarding"+message;
-        speak(finalText)
+        speak(finalText);
     }
 
     else if(message.includes("wikipedia")){
         window.open(`https://www.wikipedia.com/search?q=${message.replace("wikipedia", " ")}`,"_blank");
         let finalText = "This is What i found on wikipedia regarding"+message;
-        speak(finalText)
+        speak(finalText);
+    }
+
+    else if(message.includes("chatgpt")){
+        window.open(`https://www.chatgpt.com/search?q=${message.replace("chatgpt", " ")}`,"_blank");
+        let finalText = "This is What i found on chatgpt regarding"+message;
+        speak(finalText);
     }
 
     else if(message.includes("time")){
         let time = new Date().toLocaleString(undefined,{hour: "numeric",minute:"numeric",second:"numeric"})
         let finalText = time;
-        speak(finalText)
+        speak(finalText);
     }
 
 
     else if(message.includes("date")){
         let date = new Date().toLocaleString(undefined,{month: "numeric",day:"numeric"})
         let finalText = date;
-        speak(finalText)
+        speak(finalText);
     }
 
     else if(message.includes("calculator")){
@@ -106,6 +112,6 @@ function takeCommand(message){
     else{
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`,"_blank");
         let finalText = "I found some information for "+message + "on google";
-        speak(finalText)
+        speak(finalText);
     }
 }
