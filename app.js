@@ -53,6 +53,30 @@ function takeCommand(message){
     if(message.includes("hey") || message.includes("hello")){
         speak("Hello, How May I Help You");
     }
+    else if(message.includes("open google")){
+        window.open("https://www.google.com","_blank");
+        speak("Opening Google")
+    }
+    else if(message.includes("open linkedin")){
+        window.open("https://www.linkedin.com","_blank");
+        speak("Opening LinkedIn")
+    }
+    else if(message.includes("open youtube")){
+        window.open("https://www.youtube.com","_blank");
+        speak("Opening YouTube")
+    }
+    else if(message.includes("open facebook")){
+        window.open("https://www.facebook.com","_blank");
+        speak("Opening Facebook")
+    }
+    else if(message.includes("open instagram")){
+        window.open("https://www.instagram.com","_blank");
+        speak("Opening Instagram")
+    }
+    // else if(message.includes("open ")){
+    //     window.open("https://www.facebook.com","_blank");
+    //     speak("Opening Facebook")
+    // }
     else{
         speak("Make More Intelligentes");
     }
