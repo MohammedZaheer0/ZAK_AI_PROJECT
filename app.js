@@ -31,3 +31,24 @@ window.addEventListener("load",()=>{
     speak("Initializing ZAK AI....");
     wishMe();
 });
+
+let SpeechRecognition =  window.SpeechRecognition || window.webkitSpeechRecognition;
+
+let recognition =  new SpeechRecognition();
+
+recognition.onresult = (event)=>{
+    let Index =  event.resultIndex;
+    let transcript =  event.results[Index][0].transcript;
+    Input.textContent = transcript;
+    takeCommand(transcript.toLowerCases());
+}
+
+Mic.addEventListener("click",()=>{
+    Input.textContent = "Listening...";
+    recognition.start();
+});
+
+
+function takeCommand(){
+    
+}
