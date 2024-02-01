@@ -49,8 +49,8 @@ Mic.addEventListener("click", () => {
 
 
 function takeCommand(message){
-    if(message.includes("hey") || message.includes("hello")){
-        speak("Hello, How May I Help You");
+    if(message.includes("hey") || message.includes("hello") || message.includes("hello zak ai") || message.includes("hey zak ai")){
+        speak("Hello Sir, How May I Help You?");
     }
     else if(message.includes("open google")){
         window.open("https://www.google.com","_blank");
