@@ -39,16 +39,16 @@ let recognition =  new SpeechRecognition();
 recognition.onresult = (event)=>{
     let Index =  event.resultIndex;
     let transcript =  event.results[Index][0].transcript;
-    Input.textContent = transcript;
-    takeCommand(transcript.toLowerCases());
+    Input.value = transcript;
+    takeCommand(transcript.toLowerCase());
 }
 
 Mic.addEventListener("click",()=>{
-    Input.textContent = "Listening...";
+    Input.value = "Listening...";
     recognition.start();
 });
 
 
 function takeCommand(){
-    
+
 }
