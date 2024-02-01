@@ -6,7 +6,7 @@
 }
 .container{
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background: #000000;
 }
 nav{
@@ -68,7 +68,6 @@ nav{
 /* Media Queries For Mobile */
 @media only screen and (max-width:600px){
     nav{
-        height: 12vh;
         width: 100%;
         padding: 2rem 1rem;
         font-size: 1rem;
@@ -103,7 +102,6 @@ nav{
 /* Media Queries For Tablet */
 @media only screen and (min-width:601px) and (max-width:1024px){
     nav{
-        height: 12vh;
         width: 100%;
         padding:  1rem 2rem;
         font-size: 1.5rem;
@@ -118,7 +116,7 @@ nav{
     }
     .intor img{
         height: 65vh;
-        margin: -5% auto 0;
+        margin: -7% auto 0;
     }
     .question{
         width: 70%;
