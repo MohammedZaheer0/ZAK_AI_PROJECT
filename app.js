@@ -32,18 +32,17 @@ window.addEventListener("load",()=>{
     wishMe();
 });
 
-let SpeechRecognition =  window.SpeechRecognition || window.webkitSpeechRecognition;
+let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+let recognition = new SpeechRecognition();
 
-let recognition =  new SpeechRecognition();
-
-recognition.onresult = (event)=>{
-    let Index =  event.resultIndex;
-    let transcript =  event.results[Index][0].transcript;
+recognition.onresult = (event) => {
+    let Index = event.resultIndex;
+    let transcript = event.results[Index][0].transcript;
     Input.value = transcript;
     takeCommand(transcript.toLowerCase());
-}
+};
 
-Mic.addEventListener("click",()=>{
+Mic.addEventListener("click", () => {
     Input.value = "Listening...";
     recognition.start();
 });
@@ -73,11 +72,40 @@ function takeCommand(message){
         window.open("https://www.instagram.com","_blank");
         speak("Opening Instagram")
     }
-    // else if(message.includes("open ")){
-    //     window.open("https://www.facebook.com","_blank");
-    //     speak("Opening Facebook")
-    // }
+    else if(message.includes("what is") || message.includes("who is") || message.includes("where is ")){
+        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`,"_blank");
+        let finalText = "This is What i found on internet regarding"+message;
+        speak(finalText)
+    }
+
+    else if(message.includes("wikipedia")){
+        window.open(`https://www.wikipedia.com/search?q=${message.replace("wikipedia", " ")}`,"_blank");
+        let finalText = "This is What i found on wikipedia regarding"+message;
+        speak(finalText)
+    }
+
+    else if(message.includes("time")){
+        let time = new Date().toLocaleString(undefined,{hour: "numeric",minute:"numeric",second:"numeric"})
+        let finalText = time;
+        speak(finalText)
+    }
+
+
+    else if(message.includes("date")){
+        let date = new Date().toLocaleString(undefined,{month: "numeric",day:"numeric"})
+        let finalText = date;
+        speak(finalText)
+    }
+
+    else if(message.includes("calculator")){
+        window.open('Calculator:///');
+        let finalText = "Opening Calculator";
+        speak(finalText);
+    }
+
     else{
-        speak("Make More Intelligentes");
+        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`,"_blank");
+        let finalText = "I found some information for "+message + "on google";
+        speak(finalText)
     }
 }

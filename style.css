@@ -47,6 +47,11 @@ nav{
     padding: 0.2rem;
     border-radius: 50px;
 }
+.question .mic{
+    background: transparent;
+    border: none;
+    outline: none;
+}
 .question i{
    font-size: 2rem;
    margin-right: 7px;
